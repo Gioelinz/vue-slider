@@ -15,11 +15,23 @@ const app = new Vue({
         ],
     },
     methods: {
+
         changeMedia(index) {
             return this.currentMedia === index;
         },
+
         setMedia(index) {
-            this.currentMedia = index
-        }
+            this.currentMedia = index;
+        },
+
+        prevMedia() {
+            if (this.currentMedia === 0) this.currentMedia = this.medias.length - 1;
+            else this.currentMedia--;
+        },
+
+        nextMedia() {
+            if (this.currentMedia === this.medias.length - 1) this.currentMedia = 0;
+            else this.currentMedia++;
+        },
     }
 })
