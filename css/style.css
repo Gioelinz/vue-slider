@@ -30,3 +30,15 @@
 .slider-dots .dot.active {
   background-color: dodgerblue;
 }
+ .slider img{
+  animation: myanim 1s ease-in-out;
+ }
+
+@keyframes myanim {
+  from{
+    opacity: 0.3;
+  }
+  to{
+    opacity: 1;
+  }
+}
