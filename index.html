@@ -28,10 +28,8 @@
             <img class="img-fluid" v-for="(media, index) in medias" v-if="changeMedia(index)" :src="media"
               alt="Media" />
             <div class="slider-dots">
-              <div class="dot mx-2 active"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
-              <div class="dot mx-2"></div>
+              <div :class="['dot', 'mx-2', {active: changeMedia(index)}]" v-for="(media, index) in medias"
+                @click="setMedia(index)"></div>
             </div>
           </div>
         </div>
