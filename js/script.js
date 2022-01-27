@@ -6,7 +6,6 @@ const app = new Vue({
     el: '#root',
     data: {
         currentMedia: 0,
-        isActive: false,
         medias: [
             'images/image1.jpg',
             'images/image2.jpg',
@@ -33,5 +32,12 @@ const app = new Vue({
             if (this.currentMedia === this.medias.length - 1) this.currentMedia = 0;
             else this.currentMedia++;
         },
+
+        autoPlay() {
+            setInterval(this.nextMedia, 3000);
+        },
+    },
+    created() {
+        this.autoPlay();
     }
 })
