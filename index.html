@@ -21,20 +21,20 @@
     <div class="container vh-100">
       <div class="row">
         <div class="col-3 d-flex align-items-center justify-content-center">
-          <i class="fas fa-angle-left fa-4x" @click="prevMedia"></i>
+          <i class="fas fa-angle-left fa-4x" @click="prevMedia" @mouseenter="stopAutoPlay" @mouseleave="autoPlay"></i>
         </div>
         <div class="col-6">
           <div class="slider d-flex align-items-center">
             <img class="img-fluid" v-for="(media, index) in medias" v-if="changeMedia(index)" :src="media"
               alt="Media" />
-            <div class="slider-dots">
+            <div class="slider-dots" @mouseenter="stopAutoPlay" @mouseleave="autoPlay">
               <div :class="['dot', 'mx-2', {active: changeMedia(index)}]" v-for="(media, index) in medias"
                 @click="setMedia(index)"></div>
             </div>
           </div>
         </div>
         <div class="col-3 d-flex align-items-center justify-content-center">
-          <i class="fas fa-angle-right fa-4x" @click="nextMedia"></i>
+          <i class="fas fa-angle-right fa-4x" @click="nextMedia" @mouseenter="stopAutoPlay" @mouseleave="autoPlay"></i>
         </div>
       </div>
     </div>
